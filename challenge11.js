@@ -75,7 +75,7 @@ for (let i = 0; i <= 20; i++) {
     if (i > 10) break;
     numbers.push(i);
 }
-console.log(numbers)
+console.log(numbers);
 /*
 Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
 criado acima, só precisa ser reiniciado) números de 0 a 20, inclusive
