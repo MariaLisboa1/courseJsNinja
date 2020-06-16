@@ -1,16 +1,22 @@
 (function(win, doc) {
   'use strict';
-  var $input = doc.querySelector('#username');
-  var $button = doc.querySelector('#button');
-
-  $button.addEventListener('click', function(event) {
-    event.preventDefault();
-    console.log('Click no botão');
-  }, false);
-
-  $input.addEventListener('click', function() {
-    alert('Clicou no input');
-  }, false);
   
+  var counter = 0;
+  var $button = doc.querySelector('[data-js="button"]');
+  var temporizador;
+
+  function timer() {
+    console.log( 'timer', counter++ );
+  }
+
+  temporizador = setInterval( timer , 1000);
+  //ao clicar no botão ele vai parar o setInterval
+  $button.addEventListener('click', function() {
+    clearInterval(temporizador);
+  }, false);
 
 })(window, document);
+
+/**
+ * <button data-js="button">Parar cronômetro</button>
+ */
