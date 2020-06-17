@@ -1,22 +1,22 @@
-(function(win, doc) {
+(function() {
   'use strict';
   
-  var counter = 0;
-  var $button = doc.querySelector('[data-js="button"]');
-  var temporizador;
+  function myFunc() {
+    
+    Array.prototype.forEach.call( arguments, function(arg) {
+      console.log(arg);
+    });
 
-  function timer() {
-    console.log( 'timer', counter++ );
   }
 
-  temporizador = setInterval( timer , 1000);
-  //ao clicar no botão ele vai parar o setInterval
-  $button.addEventListener('click', function() {
-    clearInterval(temporizador);
-  }, false);
+  console.log( myFunc(1,2,3,4,5,6,7) );
+  // 1
+  // 2
+  // 3
+  // 4
+  // 5
+  // 6
+  // 7
 
-})(window, document);
+})();
 
-/**
- * <button data-js="button">Parar cronômetro</button>
- */
