@@ -1,22 +1,14 @@
 (function() {
   'use strict';
-  
+
   function myFunc() {
-    
-    Array.prototype.forEach.call( arguments, function(arg) {
-      console.log(arg);
+    return Array.prototype.reduce.call(arguments,function(acumulado, atual) {
+      return acumulado + atual;
     });
 
   }
 
-  console.log( myFunc(1,2,3,4,5,6,7) );
-  // 1
-  // 2
-  // 3
-  // 4
-  // 5
-  // 6
-  // 7
+  console.log( myFunc( 1,2,3,4,5 ) );
 
 })();
 
